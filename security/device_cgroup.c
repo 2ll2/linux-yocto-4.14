@@ -8,6 +8,7 @@
 #include <linux/device_cgroup.h>
 #include <linux/cgroup.h>
 #include <linux/ctype.h>
+#include <linux/export.h>
 #include <linux/list.h>
 #include <linux/uaccess.h>
 #include <linux/seq_file.h>
@@ -772,6 +773,7 @@ static ssize_t devcgroup_access_write(struct kernfs_open_file *of,
 	mutex_unlock(&devcgroup_mutex);
 	return retval ?: nbytes;
 }
+EXPORT_SYMBOL_GPL(__devcgroup_inode_permission);
 
 static struct cftype dev_cgroup_files[] = {
 	{
