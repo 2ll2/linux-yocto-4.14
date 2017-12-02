@@ -773,7 +773,6 @@ static ssize_t devcgroup_access_write(struct kernfs_open_file *of,
 	mutex_unlock(&devcgroup_mutex);
 	return retval ?: nbytes;
 }
-EXPORT_SYMBOL_GPL(__devcgroup_inode_permission);
 
 static struct cftype dev_cgroup_files[] = {
 	{
